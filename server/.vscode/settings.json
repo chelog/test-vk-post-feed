@@ -1,0 +1,10 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "editor.tabSize": 2,
+  "editor.rulers": [120],
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "prettier.requireConfig": true
+}

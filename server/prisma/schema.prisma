@@ -1,0 +1,24 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+// using local database to simplify stack
+datasource db {
+  provider = "sqlite"
+  url      = "file:./database.db"
+}
+
+model User {
+  id       Int    @id @default(autoincrement())
+  name     String @unique
+  password String
+  posts    Post[]
+}
+
+model Post {
+  id          Int      @id @default(autoincrement())
+  content     String
+  publishedAt DateTime @default(now())
+  author      User     @relation(fields: [authorId], references: [id])
+  authorId    Int
+}
